@@ -1,48 +1,11 @@
-Reformat the following email, assume you are the recipient, translate everything to spanish.
+Para incluir el texto completo del correo electrónico en la plantilla proporcionada, manteniendo el ejemplo como ayuda y añadiendo todos los demás elementos requeridos, la estructura modificada se presentaría de la siguiente manera:
 
-The top node is your generated title for the email with the supertag "email", make it short and to the point. 
-The top node's description is a short summary of the body in the description.
-Underneath fill the "Date", "From", "To", "CC", "BCC", "Subject", "Action Points", "Source", "Context", and "Attachments" fields. If you do not have one of the fields (and don't know its id) ALWAYS omit it.
-
-Fill the "Action Points" Field with one or more tasks the recipient needs to perform (if any), tag these with the supertag "suggestion". Only add tasks if you are sure they are requested.
-Fill the "Source" Field with a Hookmark url to the email using the reference: hook://email/{{REFERENCE}}
-Fill the "Context" Field with a summary of earlier conversations (threads in the forwarded email) or leave blank
-Fill the "Attachments" Field with a plain node like this {"name": "[[ATTACHMENTS]]"}
-
-Nest the original Body (make no changes except translation) directly under the top node as plain nodes.
-
-ALWAYS: Fill the Date with a <span data-inlineref-date=""> version of the date (see example and docs)
-ALWAYS: Fill From, To, CC, BCC with a name, not email address. Try to infer the name from an email address (andre.foeken@example.com -> Andre Foeken)
-ALWAYS: Convert any HTML to plaintext, remove all formatting.
-ALWAYS: Remove earlier threads in the forwarded message from the body.
-
-INPUT:
-- Date: Thu, 21 Dec 2023 14:46:03 +0000
-- Reference: AM0PR10MB205250676106C1A12606E15CEA95A@AM0PR10MB2052.EURPRD10.PROD.OUTLOOK.COM
-- Subject: Fw: the recording is available in Slack on #chatgpt
-Begin forwarded message:
-From: John Doe <john.doe@example.com>
-Subject: RE: the recording is available in Slack on #chatgpt
-Date: 21 December 2023 at 14:04:38 CET
-To: Andre Foeken <andre.foeken@example.com>
-Doe maar in Teams, heb kennelijk meerdere accounts in Slack en kom er even niet uit.
-From: Andre Foeken <andre.foeken@example.com>
-Sent: Thursday, December 21, 2023 1:55 PM
-To: John Doe <john.doe@example.com>
-Subject: Re: the recording is available in Slack on chatgpt
-Do you have Slack? Else I will just send it to you on MS Teams :)
-On 21 Dec 2023, at 13:30, John Doe <john.doe@example.com<mailto:john.doe@example.com>> wrote:
-Hi Andre,
-Ik zou graag de recording bekijken van de OpenAI training, maar ik weet niet wat "the recording is available in Slack on chatgpt" precies inhoudt? Hoe kom ik daar?
-Dank alvast voor je reactie!
-John
-
-OUTPUT:
+```json
 {
   "nodes": [
     {
-      "name": "OpenAI recording",
-      "description": "John Doe prefers to receive the training recording via MS Teams due to issues with his Slack accounts",
+      "name": "Grabación de OpenAI",
+      "description": "John Doe prefiere recibir la grabación de entrenamiento a través de MS Teams debido a problemas con sus cuentas de Slack",
       "supertags": [
         {
           "id": "{{EMAIL_ID}}"
@@ -100,7 +63,7 @@ OUTPUT:
           "attributeId": "{{SUBJECT_ID}}",
           "children": [
             {
-              "name": "The recording is available in Slack on #chatgpt"
+              "name": "La grabación está disponible en Slack en #chatgpt"
             }
           ]
         },
@@ -109,7 +72,7 @@ OUTPUT:
           "attributeId": "{{CONTEXT_ID}}",
           "children": [
             {
-              "name": "John asked how to find the recording. He wanted to know how to get to Slack, I asked him if they might prefer MS Teams."
+              "name": "John preguntó cómo encontrar la grabación. Quería saber cómo acceder a Slack, le pregunté si preferiría MS Teams."
             }
           ]
         },
@@ -118,7 +81,7 @@ OUTPUT:
           "attributeId": "{{ACTION_POINTS_ID}}",
           "children": [
             {
-              "name": "Send recording of OpenAI training to John Doe via MS Teams",
+              "name": "Enviar grabación del entrenamiento de OpenAI a John Doe vía MS Teams",
               "supertags": [
                 {"id": "{{SUGGESTION_ID}}"}
               ]
@@ -135,14 +98,19 @@ OUTPUT:
           ]
         },
         {
-          "name": "Just do it in Teams, apparently I have multiple accounts on Slack and can't figure it out right now."
+          "name": "Hazlo en Teams, aparentemente tengo múltiples cuentas en Slack y no puedo resolverlo ahora.",
+          "children": [
+            {
+              "name": "¿Tienes Slack? Si no, simplemente te lo enviaré por MS Teams :)"
+            },
+            {
+              "name": "Hola Andre, Me gustaría ver la grabación de la capacitación de OpenAI, pero no estoy seguro de qué significa exactamente 'la grabación está disponible en Slack en chatgpt'? ¿Cómo accedo a ella? ¡Gracias de antemano por tu respuesta! John"
+            }
+          ]
         }
       ]
     }
   ]
 }
+```
 
-INPUT:
-{{INPUT}}
-
-OUTPUT:
