@@ -41,8 +41,8 @@ OUTPUT:
 {
   "nodes": [
     {
-      "name": "OpenAI recording",
-      "description": "John Doe prefers to receive the training recording via MS Teams due to issues with his Slack accounts",
+      "name": "Grabación de OpenAI",
+      "description": "John Doe prefiere recibir la grabación de entrenamiento a través de MS Teams debido a problemas con sus cuentas de Slack",
       "supertags": [
         {
           "id": "{{EMAIL_ID}}"
@@ -54,7 +54,7 @@ OUTPUT:
           "attributeId": "{{SOURCE_ID}}",
           "children": [
             {
-              "name": "hook://email/AM0PR10MB205250676106C1A12606E15CEA95A@AM0PR10MB2052.EURPRD10.PROD.OUTLOOK.COM"
+              "name": "<a href='mailto:AM0PR10MB205250676106C1A12606E15CEA95A@AM0PR10MB2052.EURPRD10.PROD.OUTLOOK.COM'>hook://email/AM0PR10MB205250676106C1A12606E15CEA95A@AM0PR10MB2052.EURPRD10.PROD.OUTLOOK.COM</a>"
             }
           ]
         },
@@ -62,7 +62,7 @@ OUTPUT:
           "type": "field",
           "attributeId": "{{DATE_ID}}",
           "children": [
-            {              
+            {
               "name": "<span data-inlineref-date=\"{&quot;dateTimeString&quot;:&quot;2023-12-21T14:46&quot;}\"></span>"
             }
           ]
@@ -100,7 +100,7 @@ OUTPUT:
           "attributeId": "{{SUBJECT_ID}}",
           "children": [
             {
-              "name": "The recording is available in Slack on #chatgpt"
+              "name": "La grabación está disponible en Slack en #chatgpt"
             }
           ]
         },
@@ -109,7 +109,7 @@ OUTPUT:
           "attributeId": "{{CONTEXT_ID}}",
           "children": [
             {
-              "name": "John asked how to find the recording. He wanted to know how to get to Slack, I asked him if they might prefer MS Teams."
+              "name": "John preguntó cómo encontrar la grabación. Quería saber cómo acceder a Slack, le pregunté si preferiría MS Teams."
             }
           ]
         },
@@ -118,7 +118,7 @@ OUTPUT:
           "attributeId": "{{ACTION_POINTS_ID}}",
           "children": [
             {
-              "name": "Send recording of OpenAI training to John Doe via MS Teams",
+              "name": "Enviar grabación del entrenamiento de OpenAI a John Doe vía MS Teams",
               "supertags": [
                 {"id": "{{SUGGESTION_ID}}"}
               ]
@@ -135,12 +135,18 @@ OUTPUT:
           ]
         },
         {
-          "name": "Just do it in Teams, apparently I have multiple accounts on Slack and can't figure it out right now."
+          "name": "Texto Completo del Correo",
+          "children": [
+            {
+              "name": "Hola Andre, Me gustaría ver la grabación de la capacitación de OpenAI, pero no estoy seguro de qué significa exactamente 'la grabación está disponible en Slack en #chatgpt'. ¿Cómo accedo a ella? ¡Gracias de antemano por tu respuesta! John"
+            }
+          ]
         }
       ]
     }
   ]
 }
+
 
 INPUT:
 {{INPUT}}
