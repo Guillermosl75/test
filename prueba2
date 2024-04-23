@@ -1,0 +1,113 @@
+Entiendo que necesitas toda la estructura y el contenido en español, y confirmo que la siguiente estructura JSON está completamente en español y lista para ser usada. Aquí tienes el código exacto que debes pegar:
+
+```json
+{
+  "nodes": [
+    {
+      "name": "Grabación de OpenAI",
+      "description": "John Doe prefiere recibir la grabación de entrenamiento a través de MS Teams debido a problemas con sus cuentas de Slack",
+      "supertags": [
+        {
+          "id": "{{EMAIL_ID}}"
+        }
+      ],
+      "children": [
+        {
+          "type": "field",
+          "attributeId": "{{SOURCE_ID}}",
+          "children": [
+            {
+              "name": "hook://email/AM0PR10MB205250676106C1A12606E15CEA95A@AM0PR10MB2052.EURPRD10.PROD.OUTLOOK.COM"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "attributeId": "{{DATE_ID}}",
+          "children": [
+            {
+              "name": "<span data-inlineref-date=\"{&quot;dateTimeString&quot;:&quot;2023-12-21T14:46&quot;}\"></span>"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "attributeId": "{{FROM_ID}}",
+          "children": [
+            {
+              "name": "John Doe"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "attributeId": "{{TO_ID}}",
+          "children": [
+            {
+              "name": "Andre Foeken"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "attributeId": "{{CC_ID}}",
+          "children": []
+        },
+        {
+          "type": "field",
+          "attributeId": "{{BCC_ID}}",
+          "children": []
+        },
+        {
+          "type": "field",
+          "attributeId": "{{SUBJECT_ID}}",
+          "children": [
+            {
+              "name": "La grabación está disponible en Slack en #chatgpt"
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "attributeId": "{{CONTEXT_ID}}",
+          "children": [
+            {
+              "name": "John preguntó cómo encontrar la grabación. Quería saber cómo acceder a Slack, le pregunté si preferiría MS Teams."
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "attributeId": "{{ACTION_POINTS_ID}}",
+          "children": [
+            {
+              "name": "Enviar grabación del entrenamiento de OpenAI a John Doe vía MS Teams",
+              "supertags": [
+                {"id": "{{SUGGESTION_ID}}"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "field",
+          "attributeId": "{{ATTACHMENTS_ID}}",
+          "children": [
+            {
+              "name": "[[ATTACHMENTS]]"
+            }
+          ]
+        },
+        {
+          "name": "Texto Completo del Correo",
+          "children": [
+            {
+              "name": "Hola Andre, Me gustaría ver la grabación de la capacitación de OpenAI, pero no estoy seguro de qué significa exactamente 'la grabación está disponible en Slack en #chatgpt'. ¿Cómo accedo a ella? ¡Gracias de antemano por tu respuesta! John"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
